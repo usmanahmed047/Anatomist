@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "585518595572",
+    "firebase_url": "https://firtebaseauthentications-default-rtdb.firebaseio.com",
+    "project_id": "firtebaseauthentications",
+    "storage_bucket": "firtebaseauthentications.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:585518595572:android:dd7eb60436d8b8fdb18da1",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.FirebaseAuthentications"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "585518595572-ai9nlsldd0bkl7qkq5849ie8su1rvk7d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.DefaultCompany.FirebaseAuthentications",
+            "certificate_hash": "11e52423aafbdc37f5625c4d683e45ac496e393c"
+          }
+        },
+        {
+          "client_id": "585518595572-2d2r9otlrpe9a3f2jm5frdk1q7oe1ti8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9XfATh-fnpZZGAE4l8wyHt9FQ4y5rYRs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "585518595572-2d2r9otlrpe9a3f2jm5frdk1q7oe1ti8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
