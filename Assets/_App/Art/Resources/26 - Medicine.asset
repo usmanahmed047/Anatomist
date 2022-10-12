@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619bb168890e14d4eb179e70af1b9899, type: 3}
+  m_Name: 26 - Medicine
+  m_EditorClassIdentifier: 
+  GifSprites:
+  - {fileID: 21300000, guid: 12fe5c8468e75b5479c22724e6358256, type: 3}
+  - {fileID: 21300000, guid: 2508b4bb25142e54ba8b8c5f71f52250, type: 3}
+  - {fileID: 21300000, guid: a982ac35bfa09d24ab796b6f148bca33, type: 3}
+  - {fileID: 21300000, guid: 6e8dcec1ba1e2084aa3eb925774dec35, type: 3}
+  - {fileID: 21300000, guid: f3846188fe125f040904ad2fd0b8cb83, type: 3}
+  - {fileID: 21300000, guid: d7663a0e117c6fa44a0978e888993eaa, type: 3}
+  - {fileID: 21300000, guid: fca74046dec484f4dbdd4d5ebfdc8800, type: 3}
+  - {fileID: 21300000, guid: 8a354833f5e5eac4c86b4491a1fd5e97, type: 3}

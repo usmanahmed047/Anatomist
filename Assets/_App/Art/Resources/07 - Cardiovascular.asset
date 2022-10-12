@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619bb168890e14d4eb179e70af1b9899, type: 3}
+  m_Name: 07 - Cardiovascular
+  m_EditorClassIdentifier: 
+  GifSprites:
+  - {fileID: 21300000, guid: f6dddd57da4ef1b4f8e1a1eec544149b, type: 3}
+  - {fileID: 21300000, guid: 2aade962a79fe4749a91331f3fccc076, type: 3}
+  - {fileID: 21300000, guid: 99955ee9165f78d46b2a6670e3d43e6e, type: 3}
+  - {fileID: 21300000, guid: 46ee4bbb715a81f48a3852cade162864, type: 3}
+  - {fileID: 21300000, guid: 26896dc9589747746a200368b3de2254, type: 3}
+  - {fileID: 21300000, guid: daa2c9641fe01824a87b29402882dc19, type: 3}
+  - {fileID: 21300000, guid: 5c5f35f8e3a15a445a571ba89dce0671, type: 3}
+  - {fileID: 21300000, guid: f31339d7e4a03b54c9cae48562c17e58, type: 3}
+  - {fileID: 21300000, guid: 5c30b027b09f11a43b50ffab6c9eede6, type: 3}

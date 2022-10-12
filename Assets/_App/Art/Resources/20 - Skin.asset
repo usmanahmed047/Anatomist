@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619bb168890e14d4eb179e70af1b9899, type: 3}
+  m_Name: 20 - Skin
+  m_EditorClassIdentifier: 
+  GifSprites:
+  - {fileID: 21300000, guid: 73183cf7e13db91449aa1974dc84c55d, type: 3}
+  - {fileID: 21300000, guid: fd1fbe449d8c85f48a4e91a4c171ddb8, type: 3}
+  - {fileID: 21300000, guid: 8571817b00881fc4b883b20649858781, type: 3}
+  - {fileID: 21300000, guid: f33eaceb944db114ba8377fe09fe9106, type: 3}
+  - {fileID: 21300000, guid: 0732349d850142c4691e0ac05c9025d7, type: 3}
+  - {fileID: 21300000, guid: 27d2e08ffd8d3c2478839abb88f9da32, type: 3}
+  - {fileID: 21300000, guid: 85effcc44a03ccd4f8170a1eb031e44c, type: 3}
+  - {fileID: 21300000, guid: 8c924d5419bc82d458205649bcbd5d69, type: 3}
+  - {fileID: 21300000, guid: 1ad3b5302b53e124b98c117875907987, type: 3}
+  - {fileID: 21300000, guid: 3735693a71ec1774d9d05c33e4b725a9, type: 3}

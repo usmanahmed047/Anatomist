@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619bb168890e14d4eb179e70af1b9899, type: 3}
+  m_Name: 14 - Muscles
+  m_EditorClassIdentifier: 
+  GifSprites:
+  - {fileID: 21300000, guid: 95deee0223fe1fe469727e201f481f99, type: 3}
+  - {fileID: 21300000, guid: 49180fca100b241448f55bfb69750fcf, type: 3}
+  - {fileID: 21300000, guid: 9f9c8f47d71b7e149b84f384668a7eae, type: 3}
+  - {fileID: 21300000, guid: 1adafa13342e9e34383e805617f402b8, type: 3}
+  - {fileID: 21300000, guid: cd93937ae83841b46be81906017c3de3, type: 3}
+  - {fileID: 21300000, guid: bee3bc26d15a49543b418498df6a29c5, type: 3}
+  - {fileID: 21300000, guid: dc248614220469242bcf420ce5be79ca, type: 3}
+  - {fileID: 21300000, guid: 4417f0c04795560438f8d2dc4eb3b468, type: 3}
+  - {fileID: 21300000, guid: 6c1b6d0caaf4ab64489a66eadf75a79f, type: 3}

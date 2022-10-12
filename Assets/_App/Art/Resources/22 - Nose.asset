@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619bb168890e14d4eb179e70af1b9899, type: 3}
+  m_Name: 22 - Nose
+  m_EditorClassIdentifier: 
+  GifSprites:
+  - {fileID: 21300000, guid: 9f222e8c1c220274a95d34908ead4a8a, type: 3}
+  - {fileID: 21300000, guid: ded35990f66befe489151bdf5105be1f, type: 3}
+  - {fileID: 21300000, guid: 94895232cdc077e43989f5540f8ac1c3, type: 3}
+  - {fileID: 21300000, guid: 312e90edfe119fd4898262cd8bbc19ca, type: 3}
+  - {fileID: 21300000, guid: ff91257a7f683474295dd17bb47b0caa, type: 3}
+  - {fileID: 21300000, guid: 76124be3ad57a0e42be5c38269113ec8, type: 3}
+  - {fileID: 21300000, guid: fde65512b176d6744b49819f31bde3ac, type: 3}
+  - {fileID: 21300000, guid: 46bb41c05a4809c4c99235d5de644026, type: 3}

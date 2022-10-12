@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619bb168890e14d4eb179e70af1b9899, type: 3}
+  m_Name: 08 - Liver
+  m_EditorClassIdentifier: 
+  GifSprites:
+  - {fileID: 21300000, guid: 47d699e21cf9e8643855767964d75da5, type: 3}
+  - {fileID: 21300000, guid: 1dd638f638aee614cb847e9b2cc72e71, type: 3}
+  - {fileID: 21300000, guid: b071f520e63cca34c8178ce8c9452442, type: 3}
+  - {fileID: 21300000, guid: 24e5c4002e17aae45ab39a44b122d49c, type: 3}
+  - {fileID: 21300000, guid: 04a32bd7c5ea00c41adf46732d040445, type: 3}
+  - {fileID: 21300000, guid: 0db6f2f52ca1d7140b331db696f8b6d9, type: 3}
+  - {fileID: 21300000, guid: 92674e594f27fdd4c9b3c07941e5d4e0, type: 3}
+  - {fileID: 21300000, guid: 22a3356e406a6644fa641f7827cb94b8, type: 3}

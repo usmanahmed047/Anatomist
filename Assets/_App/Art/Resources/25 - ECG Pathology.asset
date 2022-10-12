@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619bb168890e14d4eb179e70af1b9899, type: 3}
+  m_Name: 25 - ECG Pathology
+  m_EditorClassIdentifier: 
+  GifSprites:
+  - {fileID: 21300000, guid: 6393c4fda1b739e45ac5ce2fbeee42e8, type: 3}
+  - {fileID: 21300000, guid: 8e0fd08e8d03713439c20287649f89be, type: 3}
+  - {fileID: 21300000, guid: 6c9626ffa12cca641bcf4f45890e9271, type: 3}
+  - {fileID: 21300000, guid: 0d6377d381b72e04aa3257148b4be526, type: 3}
+  - {fileID: 21300000, guid: ff9bbdaab4538c9468d3badddbb89615, type: 3}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619bb168890e14d4eb179e70af1b9899, type: 3}
+  m_Name: 02 - Central Nervous System
+  m_EditorClassIdentifier: 
+  GifSprites:
+  - {fileID: 21300000, guid: 8ded362c93a0bd540af15fdefd2f1aea, type: 3}
+  - {fileID: 21300000, guid: 8ced32def54f6aa479fbe798d3e7fc49, type: 3}
+  - {fileID: 21300000, guid: 5598a7e105abeaa4594874d694f17d99, type: 3}
+  - {fileID: 21300000, guid: d2c8bc257a4b643499a4e8dace09f6d9, type: 3}
+  - {fileID: 21300000, guid: f328b8dd91ecfe4449d4e880f85a29b6, type: 3}
+  - {fileID: 21300000, guid: c85363a5f97f3bc42807a6f2f6f89ae2, type: 3}
+  - {fileID: 21300000, guid: d080a5630b283024593b110441571722, type: 3}

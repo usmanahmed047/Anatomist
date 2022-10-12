@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619bb168890e14d4eb179e70af1b9899, type: 3}
+  m_Name: 24 - Eye
+  m_EditorClassIdentifier: 
+  GifSprites:
+  - {fileID: 21300000, guid: 5d9a8cfaffcbdd9419a63cb9708617bd, type: 3}
+  - {fileID: 21300000, guid: 000eec47fa251664e8d920eb45d1b81e, type: 3}
+  - {fileID: 21300000, guid: 8c7500a609f47384b8b6301c57a68c33, type: 3}
+  - {fileID: 21300000, guid: f9a9b1a88331c404d8fd634c29cc520f, type: 3}
+  - {fileID: 21300000, guid: 78547631edc2b9f49b764a3b80293e22, type: 3}
+  - {fileID: 21300000, guid: 9f65a3eba19f88c43b6770708ebe6e6c, type: 3}
+  - {fileID: 21300000, guid: f6987b622997bd34e82f8f90c86b4a0e, type: 3}

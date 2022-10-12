@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619bb168890e14d4eb179e70af1b9899, type: 3}
+  m_Name: 21 - Oral Cavity
+  m_EditorClassIdentifier: 
+  GifSprites:
+  - {fileID: 21300000, guid: eb68e9eccc838874592db52e3a1a8565, type: 3}
+  - {fileID: 21300000, guid: b5c0fe3cd0d412642ab573d25fbf883f, type: 3}
+  - {fileID: 21300000, guid: cbf7e00a2384d6e47953b25b20a799c8, type: 3}
+  - {fileID: 21300000, guid: eeaf159560f605a4f975214f0cc2cf57, type: 3}
+  - {fileID: 21300000, guid: 2d86a1100ec1bd1469b6053388284745, type: 3}
+  - {fileID: 21300000, guid: 90230ce756c81684eac5cd7c494cc163, type: 3}
+  - {fileID: 21300000, guid: e3d7d81f1b2d598409b4a21821472f93, type: 3}
+  - {fileID: 21300000, guid: 12135b4f10aafa341ba4dd0bda08865c, type: 3}
+  - {fileID: 21300000, guid: bb10df63fd73f71429a417b8ef8daef0, type: 3}

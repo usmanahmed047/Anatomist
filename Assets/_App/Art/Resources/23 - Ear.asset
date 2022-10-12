@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619bb168890e14d4eb179e70af1b9899, type: 3}
+  m_Name: 23 - Ear
+  m_EditorClassIdentifier: 
+  GifSprites:
+  - {fileID: 21300000, guid: 6e15a7906c82f93499c150f439aa7cfb, type: 3}
+  - {fileID: 21300000, guid: f79fa260478d6184d964e430710a6b2e, type: 3}
+  - {fileID: 21300000, guid: df3bc4d70e506414e9fdbf76a8c53c89, type: 3}
+  - {fileID: 21300000, guid: 3610d69593de84e4f86d87acfe6d43e6, type: 3}
+  - {fileID: 21300000, guid: 02d07e7b28e9de049bfc76916304c75b, type: 3}
+  - {fileID: 21300000, guid: 8dc99ac5cb8a4864987fe8490a6d608c, type: 3}
+  - {fileID: 21300000, guid: f3f3a51b84920fa4c9b7122c822c19b0, type: 3}

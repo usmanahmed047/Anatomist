@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619bb168890e14d4eb179e70af1b9899, type: 3}
+  m_Name: 17 - Kidneys
+  m_EditorClassIdentifier: 
+  GifSprites:
+  - {fileID: 21300000, guid: e1bfd79651fe44b4da94ff33ed937c56, type: 3}
+  - {fileID: 21300000, guid: 9bb72d234a07aff41a8f92584aef7466, type: 3}
+  - {fileID: 21300000, guid: 718323d71adf9434ab2ada753e6d5173, type: 3}
+  - {fileID: 21300000, guid: 5925e8bab70def643aa2fce1067ac159, type: 3}
+  - {fileID: 21300000, guid: cd471275063b1374db4e4865472f1e68, type: 3}
+  - {fileID: 21300000, guid: 49cc8680a9ce68547822696b0099e1f8, type: 3}
+  - {fileID: 21300000, guid: 644e21b037c67f145a80638654b1a417, type: 3}
+  - {fileID: 21300000, guid: fa253558ec6e7a04ea515ef5ec0de3f0, type: 3}
+  - {fileID: 21300000, guid: 66c6e8b21b9bb75469b28a571c7dd494, type: 3}

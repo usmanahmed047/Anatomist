@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619bb168890e14d4eb179e70af1b9899, type: 3}
+  m_Name: 03 - Endocrine
+  m_EditorClassIdentifier: 
+  GifSprites:
+  - {fileID: 21300000, guid: 41da2da70bd9d2247af9c77240c7030f, type: 3}
+  - {fileID: 21300000, guid: afadbdeac1d107549b5f5062bf183c0b, type: 3}
+  - {fileID: 21300000, guid: 0c61de2025723504a999b07d56f5c9d1, type: 3}
+  - {fileID: 21300000, guid: 2d96433cb03129c4daa4c7525b4ff6a2, type: 3}
+  - {fileID: 21300000, guid: dd8f958475107b3418f71518a4351910, type: 3}
+  - {fileID: 21300000, guid: 94ceb535fb8b24d4b974d02ccb16e4f0, type: 3}
+  - {fileID: 21300000, guid: 4a4ae2ed7fbab814895c7eab1fca389b, type: 3}
+  - {fileID: 21300000, guid: d2dcf7cc74edc7d488fb381c46c3753e, type: 3}

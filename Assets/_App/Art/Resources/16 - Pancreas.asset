@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619bb168890e14d4eb179e70af1b9899, type: 3}
+  m_Name: 16 - Pancreas
+  m_EditorClassIdentifier: 
+  GifSprites:
+  - {fileID: 21300000, guid: c2d8dc3d3a363574b9b8d88e386bb9f9, type: 3}
+  - {fileID: 21300000, guid: c662ad49b9be3b04faaea2e7523178a7, type: 3}
+  - {fileID: 21300000, guid: f24ca4398431991459d5882da813fe0e, type: 3}
+  - {fileID: 21300000, guid: 27273ada38aee5843ae590d5dfaa83ae, type: 3}
+  - {fileID: 21300000, guid: dc2180b14d92836469dee1a02ad4e40c, type: 3}
+  - {fileID: 21300000, guid: 234b45b4b6d7c804ca2f9841c6e52700, type: 3}
+  - {fileID: 21300000, guid: 47ba5971ceea73a47a807830f9fd0b96, type: 3}
+  - {fileID: 21300000, guid: f2b0e95ef80496d40822a050aef7f098, type: 3}

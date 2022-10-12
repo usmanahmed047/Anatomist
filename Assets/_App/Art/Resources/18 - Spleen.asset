@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619bb168890e14d4eb179e70af1b9899, type: 3}
+  m_Name: 18 - Spleen
+  m_EditorClassIdentifier: 
+  GifSprites:
+  - {fileID: 21300000, guid: ec899fd7e8275d04b8eae8727572d801, type: 3}
+  - {fileID: 21300000, guid: 9221c085e79cf444a859807894a94f5c, type: 3}
+  - {fileID: 21300000, guid: 0de984ec72feeec4993fc697faf14dd9, type: 3}
+  - {fileID: 21300000, guid: 07c6718386c35824fbfeb05f5901e4ee, type: 3}
+  - {fileID: 21300000, guid: 50d5d4051b2d8784ca7c73540074bda4, type: 3}
+  - {fileID: 21300000, guid: 416697b90f4769e4aabff90a4ac129d8, type: 3}

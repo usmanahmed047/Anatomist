@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619bb168890e14d4eb179e70af1b9899, type: 3}
+  m_Name: 15 - Bones
+  m_EditorClassIdentifier: 
+  GifSprites:
+  - {fileID: 21300000, guid: 99a7483facebdbf4b9e74b26bd068648, type: 3}
+  - {fileID: 21300000, guid: d7c08a8d52e091945a9fe1ef0032528a, type: 3}
+  - {fileID: 21300000, guid: a58dd046058e8f7488850a818bb08e76, type: 3}
+  - {fileID: 21300000, guid: d9d5b625b034b924096ce176db7a5169, type: 3}
+  - {fileID: 21300000, guid: d7df8727b8846b2438c9f8f54b266c23, type: 3}
+  - {fileID: 21300000, guid: 653b222e8db24ea479ca4b938e1eeec9, type: 3}
+  - {fileID: 21300000, guid: 5f6d203d44827fa4db8807f68b8b44d1, type: 3}
+  - {fileID: 21300000, guid: 6b1f1ea1a0776c04a93957c6fd116fef, type: 3}
+  - {fileID: 21300000, guid: 81213aa2fe9077642a289bc8c2d065c3, type: 3}
+  - {fileID: 21300000, guid: 58e98b5b327706643bf2b633ff3458d8, type: 3}
