@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "274946996410",
+    "project_id": "anatomist-585518595572",
+    "storage_bucket": "anatomist-585518595572.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:274946996410:android:7ebbc45f28f6c171acaa83",
+        "android_client_info": {
+          "package_name": "com.AndrewMeyerson.anatomist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "274946996410-1va4ctr5r2jmpdji7slhkah3mh65a0hi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.AndrewMeyerson.anatomist",
+            "certificate_hash": "b79a02eccc2daba499c6cd87648df22492f4d193"
+          }
+        },
+        {
+          "client_id": "274946996410-8b8vknq91fl03qpt8t5k1u9nqbjm4mbk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrPJVWHk8F3j5CkWG4Z_gDOdLV-5QtOeQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "274946996410-8b8vknq91fl03qpt8t5k1u9nqbjm4mbk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
