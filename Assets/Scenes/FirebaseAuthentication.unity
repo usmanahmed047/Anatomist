@@ -1010,7 +1010,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &282197858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,7 +1023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8003a66c07007548b92f17a0a3b5e41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GoogleWebAPI: 360378039404-d9tvmipbgaem9i520mmeng086g5blobn.apps.googleusercontent.com
+  GoogleWebAPI: 274946996410-8b8vknq91fl03qpt8t5k1u9nqbjm4mbk.apps.googleusercontent.com
   git_client_id: 947a9dce8bed816d0a90
   UserLoggedIn: 0
   debugText: {fileID: 714794946}
@@ -1352,7 +1352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &454642300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4129,9 +4129,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 454642300}
-        m_TargetAssemblyTypeName: GoogleAuthetication, Assembly-CSharp
-        m_MethodName: SignInWithGoogle
+      - m_Target: {fileID: 282197858}
+        m_TargetAssemblyTypeName: FirebaseAuthenticationsHandler, Assembly-CSharp
+        m_MethodName: OnClickGoogleSignIn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

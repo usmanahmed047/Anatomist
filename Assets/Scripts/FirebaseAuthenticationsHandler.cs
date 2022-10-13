@@ -29,7 +29,7 @@ public class GitAccessTokenRequest
 public class FirebaseAuthenticationsHandler : MonoBehaviour
 {
     public static FirebaseAuthenticationsHandler instance;
-    public string GoogleWebAPI = "360378039404-d9tvmipbgaem9i520mmeng086g5blobn.apps.googleusercontent.com";  //Can be get from firebase console where we enable google authentication.
+    public string GoogleWebAPI = "274946996410-8b8vknq91fl03qpt8t5k1u9nqbjm4mbk.apps.googleusercontent.com";  //Can be get from firebase console where we enable google authentication.
 
     public string git_client_id;
     Firebase.DependencyStatus dependencyStatus = Firebase.DependencyStatus.UnavailableOther;
@@ -133,7 +133,7 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
         {
             username = user.DisplayName;
             UserLoggedIn = false;
-            SceneManager.LoadScene(2);
+            //SceneManager.LoadScene(2);
         }
     }
 
@@ -158,9 +158,9 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
             UseGameSignIn = false,
             // Copy this value from the google-service.json file.
             // oauth_client with type == 3
-            WebClientId = "360378039404-d9tvmipbgaem9i520mmeng086g5blobn.apps.googleusercontent.com"
+            WebClientId = "274946996410-8b8vknq91fl03qpt8t5k1u9nqbjm4mbk.apps.googleusercontent.com"
         };
-        SceneManager.LoadScene("MainMenu");
+       // SceneManager.LoadScene("MainMenu");
         Task<GoogleSignInUser> signIn = GoogleSignIn.DefaultInstance.SignIn();
 
         TaskCompletionSource<FirebaseUser> signInCompleted = new TaskCompletionSource<FirebaseUser>();
@@ -189,7 +189,7 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
                     else
                     {
                         signInCompleted.SetResult(((Task<FirebaseUser>)authTask).Result);
-                        SceneManager.LoadScene("MainMenu");
+                       // SceneManager.LoadScene("MainMenu");
                     }
                 });
             }
@@ -244,7 +244,7 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
             user = auth.CurrentUser;      //user's data like name dp can be taken from this variable.
             UserLoggedIn = true;
             username = user.DisplayName;
-            SceneManager.LoadScene(2);
+            //SceneManager.LoadScene(2);
         });
     }
 
@@ -303,7 +303,7 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
             Debug.LogFormat("User signed in successfully: {0} ({1})",
                 user.DisplayName, user.UserId);
             UserLoggedIn = true;
-            SceneManager.LoadScene(2);
+          //  SceneManager.LoadScene(2);
             debugText.text = debugText.text + "   " + "User signed in successfully: " + user.DisplayName + user.UserId;
             username = user.DisplayName;
 
@@ -351,7 +351,7 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
             Debug.LogFormat("User signed in successfully: {0} ({1})",
                 user.DisplayName, user.UserId);
             username = user.DisplayName;
-            SceneManager.LoadScene(2);
+           // SceneManager.LoadScene(2);
         });
     }
 
@@ -471,7 +471,7 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
             }
 
             user = task.Result;
-            SceneManager.LoadScene(2);
+            //SceneManager.LoadScene(2);
             Debug.LogFormat("User signed in successfully: {0} ({1})",
                 user.DisplayName, user.UserId);
         });
