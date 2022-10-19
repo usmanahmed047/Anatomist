@@ -40,8 +40,13 @@ namespace Anatomist
                 {
                     t.text = LocalizationManager.localization.TranslationDisclaimer;
 
-                    t.GetComponent<ArabicText>().Text = LocalizationManager.localization.TranslationDisclaimer;
-                    t.GetComponent<ArabicText>().Refresh();
+                    t.GetComponent<ArabicText>().enabled = false;
+                    if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+                    {
+                        t.GetComponent<ArabicText>().enabled = true;
+                        t.GetComponent<ArabicText>().Text = LocalizationManager.localization.TranslationDisclaimer;
+                        t.GetComponent<ArabicText>().Refresh();
+                    }
                 }
             }
 
@@ -118,8 +123,14 @@ namespace Anatomist
             {
                 t.text = LocalizationManager.localization.TranslationDisclaimer;
 
-                t.GetComponent<ArabicText>().Text = LocalizationManager.localization.TranslationDisclaimer;
-                t.GetComponent<ArabicText>().Refresh();
+
+                t.GetComponent<ArabicText>().enabled = false;
+                if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+                {
+                    t.GetComponent<ArabicText>().enabled = true;
+                    t.GetComponent<ArabicText>().Text = LocalizationManager.localization.TranslationDisclaimer;
+                    t.GetComponent<ArabicText>().Refresh();
+                }
             }
 
             switch (tag)
@@ -155,9 +166,14 @@ namespace Anatomist
                     break;
 
             }
+            continueButtonText.GetComponent<ArabicText>().enabled = false;
+            if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+            {
+                continueButtonText.GetComponent<ArabicText>().enabled = true;
+                continueButtonText.GetComponent<ArabicText>().Text = continueButtonText.text;
+                continueButtonText.GetComponent<ArabicText>().Refresh();
 
-            continueButtonText.GetComponent<ArabicText>().Text = continueButtonText.text;
-
+            }
             if (string.IsNullOrEmpty(continueButtonText.text))
             {
                 continueButtonText.text = "Continue";

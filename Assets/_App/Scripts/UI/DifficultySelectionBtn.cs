@@ -29,8 +29,13 @@ namespace Anatomist
             Lock.SetActive(IsLocked);
             NameText.text = difficulty.name;
 
-            NameText.GetComponent<ArabicText>().Text = NameText.text;
-            NameText.GetComponent<ArabicText>().Refresh();
+            NameText.GetComponent<ArabicText>().enabled = false;
+            if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+            {
+                NameText.GetComponent<ArabicText>().enabled = true;
+                NameText.GetComponent<ArabicText>().Text = NameText.text;
+                NameText.GetComponent<ArabicText>().Refresh();
+            }
         }
         
         public void StartGame()

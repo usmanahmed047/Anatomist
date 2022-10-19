@@ -3,45 +3,45 @@
     "m_SelectedPackage": {
         "deviceId": "51340f71",
         "name": "com.AndrewMeyerson.anatomist",
-        "processId": 13171,
+        "processId": 20920,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
         {
             "deviceId": "51340f71",
-            "name": "net.oneplus.launcher",
-            "processId": 5288,
+            "name": "com.AndrewMeyerson.anatomist",
+            "processId": 12352,
+            "exited": true
+        },
+        {
+            "deviceId": "51340f71",
+            "name": "com.AndrewMeyerson.anatomist",
+            "processId": 7615,
+            "exited": true
+        },
+        {
+            "deviceId": "51340f71",
+            "name": "com.AndrewMeyerson.anatomist",
+            "processId": 7617,
+            "exited": true
+        },
+        {
+            "deviceId": "51340f71",
+            "name": "com.facebook.katana",
+            "processId": 16976,
             "exited": false
         },
         {
             "deviceId": "51340f71",
-            "name": "com.DefaultCompany.anatomist",
-            "processId": 32714,
+            "name": "com.AndrewMeyerson.anatomist",
+            "processId": 20917,
             "exited": true
         },
         {
             "deviceId": "51340f71",
             "name": "com.AndrewMeyerson.anatomist",
-            "processId": 27335,
-            "exited": true
-        },
-        {
-            "deviceId": "51340f71",
-            "name": "com.AndrewMeyerson.anatomist",
-            "processId": 13168,
-            "exited": true
-        },
-        {
-            "deviceId": "51340f71",
-            "name": "com.AndrewMeyerson.anatomist",
-            "processId": 13170,
-            "exited": true
-        },
-        {
-            "deviceId": "51340f71",
-            "name": "com.AndrewMeyerson.anatomist",
-            "processId": 13171,
+            "processId": 20920,
             "exited": false
         },
         {

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Contexts;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,18 +29,37 @@ public class Popup_PurchaseFullApp : PopupWindow
         btnText.text = LocalizationManager.localization.btn_BuyPremium;
         btnRestoreText.text = LocalizationManager.localization.RestorePurchases;
 
-        title.GetComponent<ArabicText>().Text = title.text;
-        title.GetComponent<ArabicText>().Refresh();
 
-        body.GetComponent<ArabicText>().Text = body.text;
-        body.GetComponent<ArabicText>().Refresh();
+        title.GetComponent<ArabicText>().enabled = false;
+        if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+        {
+            title.GetComponent<ArabicText>().enabled = true;
+            title.GetComponent<ArabicText>().Text = title.text;
+            title.GetComponent<ArabicText>().Refresh();
+        }
 
-        btnRestoreText.GetComponent<ArabicText>().Text = btnRestoreText.text;
-        btnRestoreText.GetComponent<ArabicText>().Refresh();
+        body.GetComponent<ArabicText>().enabled = false;
+        if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+        {
+            body.GetComponent<ArabicText>().enabled = true;
+            body.GetComponent<ArabicText>().Text = body.text;
+            body.GetComponent<ArabicText>().Refresh();
+        }
+        btnRestoreText.GetComponent<ArabicText>().enabled = false;
+        if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+        {
+            btnRestoreText.GetComponent<ArabicText>().enabled = true;
+            btnRestoreText.GetComponent<ArabicText>().Text = btnRestoreText.text;
+            btnRestoreText.GetComponent<ArabicText>().Refresh();
+        }
 
-        btnText.GetComponent<ArabicText>().Text = btnText.text;
-        btnText.GetComponent<ArabicText>().Refresh();
-
+        btnText.GetComponent<ArabicText>().enabled = false;
+        if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+        {
+            btnText.GetComponent<ArabicText>().enabled = true;
+            btnText.GetComponent<ArabicText>().Text = btnText.text;
+            btnText.GetComponent<ArabicText>().Refresh();
+        }
 
         base.Open();
         lg.enabled = false;

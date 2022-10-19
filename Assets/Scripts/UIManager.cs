@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 
 public class UIManager : MonoBehaviour
@@ -9,7 +6,7 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
     public GameObject Scoreboardpanel;
     public Transform scoreboardContent;
-    public Button leaderboardButton;
+    //public Button leaderboardButton;
 
     private void Awake()
     {
@@ -25,11 +22,13 @@ public class UIManager : MonoBehaviour
 
     public void Start()
     {
-        
+
     }
 
     public void OnLeaderboardButton()
     {
+#if !UNITY_EDITOR
         FirebaseAuthenticationsHandler.instance.OnScoreboardButton();
+#endif
     }
 }

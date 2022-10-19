@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Anatomist;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 
 public class Popup_QuizSelection : PopupWindow
 {
@@ -102,12 +103,24 @@ public class Popup_QuizSelection : PopupWindow
     void Localize()
     {
         difficultyDialogText.text = LocalizationManager.localization.difficultyDialogText;
-        difficultyDialogText.GetComponent<ArabicText>().Text = difficultyDialogText.text;
-        difficultyDialogText.GetComponent<ArabicText>().Refresh();
+
+        difficultyDialogText.GetComponent<ArabicText>().enabled = false;
+        if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+        {
+            difficultyDialogText.GetComponent<ArabicText>().enabled = true;
+            difficultyDialogText.GetComponent<ArabicText>().Text = difficultyDialogText.text;
+            difficultyDialogText.GetComponent<ArabicText>().Refresh();
+        }
 
         timerEnabledLabel.text = LocalizationManager.localization.timerEnabled;
-        timerEnabledLabel.GetComponent<ArabicText>().Text = timerEnabledLabel.text;
-        timerEnabledLabel.GetComponent<ArabicText>().Refresh();
+
+        timerEnabledLabel.GetComponent<ArabicText>().enabled = false;
+        if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+        {
+            timerEnabledLabel.GetComponent<ArabicText>().enabled = true;
+            timerEnabledLabel.GetComponent<ArabicText>().Text = timerEnabledLabel.text;
+            timerEnabledLabel.GetComponent<ArabicText>().Refresh();
+        }
     }
 
     public void StartGame(GameManager.QuizDifficulty difficulty)

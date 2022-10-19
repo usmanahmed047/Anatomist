@@ -7,11 +7,11 @@ using PaperPlaneTools;
 
 public class HyperlinkHandler : MonoBehaviour, IPointerClickHandler
 {
-    TextMeshProUGUI label;
+    TMP_Text label;
 
     void Start()
     {
-        label = GetComponent<TextMeshProUGUI>();
+        label = GetComponent<TMP_Text>();
 
     }
 
@@ -44,13 +44,13 @@ public class HyperlinkHandler : MonoBehaviour, IPointerClickHandler
                 Application.OpenURL(url + "?action=write-review");
                 break;
             case "https://www.instagram.com/andrewmeyerson/":
-#if UNITY_IOS && !UNITY_EDITOR
+                #if UNITY_IOS && !UNITY_EDITOR
                 Application.OpenURL("instagram://user?username=andrewmeyerson");
-#elif UNITY_ANDROID && !UNITY_EDITOR
+                #elif UNITY_ANDROID && !UNITY_EDITOR
                 Application.OpenURL("instagram://user?username=andrewmeyerson");
-#else
+                #else
                 Application.OpenURL(url);
-#endif
+                #endif
                 break;
             default:
                 Application.OpenURL(url);

@@ -50,11 +50,22 @@ namespace Anatomist
             version.text = LocalizationManager.localization.version + "\n" + LocalizationManager.localization.copyright;
 
 
-            aboutTitle.GetComponent<ArabicText>().Text = aboutTitle.text;
-            aboutTitle.GetComponent<ArabicText>().Refresh();
 
-            version.GetComponent<ArabicText>().Text = version.text;
-            version.GetComponent<ArabicText>().Refresh();
+            aboutTitle.GetComponent<ArabicText>().enabled = false;
+            if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+            {
+                aboutTitle.GetComponent<ArabicText>().enabled = true;
+                aboutTitle.GetComponent<ArabicText>().Text = aboutTitle.text;
+                aboutTitle.GetComponent<ArabicText>().Refresh();
+            }
+            
+            version.GetComponent<ArabicText>().enabled = false;
+            if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+            {
+                version.GetComponent<ArabicText>().enabled = true;
+                version.GetComponent<ArabicText>().Text = version.text;
+                version.GetComponent<ArabicText>().Refresh();
+            }
 
             foreach (Transform child in bodyContainer)
             {
@@ -74,11 +85,14 @@ namespace Anatomist
                 bodyClone.transform.localScale = Vector3.one;
 
                 Text t = bodyClone.GetComponent<Text>();
+                t.gameObject.GetComponent<ArabicText>().enabled = false;
+
                 t.text = segments[i].Replace("$LINKCOLOR", GameManager.GetTag("$LINKCOLOR"));
 
-                if (PlayerPrefs.GetString("LanguageTag") == "ar")
+                 if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
                 {
-                    t.gameObject.AddComponent<ArabicText>().Text = t.text;
+                    t.gameObject.GetComponent<ArabicText>().enabled = true;
+                    t.gameObject.GetComponent<ArabicText>().Text = t.text;
                     t.GetComponent<ArabicText>().Refresh();
                 }
                 bodyClone.SetActive(true);

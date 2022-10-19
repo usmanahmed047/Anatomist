@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
+using Org.BouncyCastle.Asn1.X509;
+using Time = UnityEngine.Time;
 
 public static class AnatomistExtensions
 {
@@ -154,9 +156,13 @@ namespace Anatomist
                     entry.GetComponentInChildren<Text>().text = q.ClassificationText;
                     entry.GetComponent<SearchEntry>().QuestionData = q;
 
-                    entry.GetComponentInChildren<Text>().GetComponent<ArabicText>().Text = q.ClassificationText;
-                    entry.GetComponentInChildren<Text>().GetComponent<ArabicText>().Refresh();
-
+                    entry.GetComponent<ArabicText>().enabled = false;
+                    if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+                    {
+                        entry.GetComponent<ArabicText>().enabled = true;
+                        entry.GetComponentInChildren<Text>().GetComponent<ArabicText>().Text = q.ClassificationText;
+                        entry.GetComponentInChildren<Text>().GetComponent<ArabicText>().Refresh();
+                    }
 
                     searchEntries.Add(entry.GetComponent<SearchEntry>());
                     index++;
@@ -255,11 +261,24 @@ namespace Anatomist
             searchTop.text = LocalizationManager.localization.searchTop;
             searchFieldEmpty.text = LocalizationManager.localization.searchFieldEmpty;
 
-            searchTop.GetComponent<ArabicText>().Text = searchTop.text;
-            searchTop.GetComponent<ArabicText>().Refresh();
+            searchTop.GetComponent<ArabicText>().enabled = false;
+            if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+            {
+                searchTop.GetComponent<ArabicText>().enabled = true;
+                searchTop.GetComponent<ArabicText>().Text = searchTop.text;
+                searchTop.GetComponent<ArabicText>().Refresh();
+            }
 
-            searchFieldEmpty.GetComponent<ArabicText>().Text = searchFieldEmpty.text;
-            searchFieldEmpty.GetComponent<ArabicText>().Refresh();
+            searchFieldEmpty.GetComponent<ArabicText>().enabled = false;
+            {
+                if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+                {
+                    searchFieldEmpty.GetComponent<ArabicText>().enabled = true;
+                    searchFieldEmpty.GetComponent<ArabicText>().Text = searchFieldEmpty.text;
+                    searchFieldEmpty.GetComponent<ArabicText>().Refresh();
+                }
+                
+            }
         }
     }
 }

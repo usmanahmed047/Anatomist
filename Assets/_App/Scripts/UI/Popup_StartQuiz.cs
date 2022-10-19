@@ -1,10 +1,7 @@
-﻿using GameSparks.Core;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
 
 public class Popup_StartQuiz : PopupWindow
 {
@@ -92,7 +89,7 @@ public class Popup_StartQuiz : PopupWindow
     //                        string namestring = entries[i].userName;
 
     //                        namestring = namestring.Length > 17 ? namestring.Substring(0, 15) + ".." : namestring; 
-                            
+
 
     //                        nameObj.text = namestring;
     //                        friendObj.transform.Find("Score").GetComponent<Text>().text = entries[i].score.ToString("n0");
@@ -110,7 +107,7 @@ public class Popup_StartQuiz : PopupWindow
     //                }
 
     //                gotFriendRanks = true;
-                    
+
     //                friendRankCanvasGroup.DOFade(1f, 0.1f);
     //                friendRankSection.DOSizeDelta(new Vector2(friendRankSection.sizeDelta.x, 140f), 1.5f);
     //            }
@@ -140,11 +137,16 @@ public class Popup_StartQuiz : PopupWindow
             Debug.LogError("Category \"" + category + "\" not found.");
             return;
         }
-        string categoryTitle = c.GetLocalizedName(); 
-            
-        title.text = categoryTitle;
-        title.GetComponent<ArabicText>().Text = title.text;
-        title.GetComponent<ArabicText>().Refresh();
+        string categoryTitle = c.GetLocalizedName();
+
+        title.GetComponent<ArabicText>().enabled = false;
+        if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+        {
+            title.GetComponent<ArabicText>().enabled = true;
+            title.text = categoryTitle;
+            title.GetComponent<ArabicText>().Text = title.text;
+            title.GetComponent<ArabicText>().Refresh();
+        }
 
         if (icon != null)
             categoryIcon.sprite = icon;
@@ -153,9 +155,13 @@ public class Popup_StartQuiz : PopupWindow
         Text startQuiz = startQuizButton.GetComponentInChildren<Text>();
         startQuiz.text = LocalizationManager.Instance.currentLocalization.startQuiz;
 
-        startQuiz.GetComponent<ArabicText>().Text = startQuiz.text;
-        startQuiz.GetComponent<ArabicText>().Refresh();
-
+        startQuiz.GetComponent<ArabicText>().enabled = false;
+        if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+        {
+            startQuiz.GetComponent<ArabicText>().enabled = true;
+            startQuiz.GetComponent<ArabicText>().Text = startQuiz.text;
+            startQuiz.GetComponent<ArabicText>().Refresh();
+        }
         startQuizButton.onClick.RemoveAllListeners();
         startQuizButton.onClick.AddListener(() =>
         {
@@ -166,7 +172,7 @@ public class Popup_StartQuiz : PopupWindow
 
         UpdateStars(GetProgress(category));
 
-      //  ShowRanks(category);
+        //  ShowRanks(category);
     }
 
     float GetProgress(string category)

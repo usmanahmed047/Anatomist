@@ -26,7 +26,7 @@ public class AnswerBtns : MonoBehaviour {
         this.txt.text = txt;
 
         this.txt.GetComponent<ArabicText>().Text = this.txt.text;
-       // this.txt.GetComponent<ArabicText>().Refresh();
+        //this.txt.GetComponent<ArabicText>().Refresh();
 
         if (string.IsNullOrEmpty(this.txt.text))
             Debug.LogError("TEXT NOT SET ON ANSWER BUTTON: ", gameObject);

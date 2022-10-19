@@ -1,20 +1,20 @@
+using Anatomist;
+using Facebook.Unity;  //FOR FACEBOOK AUTH
+using Firebase.Auth;
+using Firebase.Database;
+using Google;
+using Proyecto26;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using UnityEngine; 
-using UnityEngine.UI;
-using Google;
-using Firebase;
-using Facebook.Unity;  //FOR FACEBOOK AUTH
 using System.Linq;
-using Firebase.Database;
-using Firebase.Auth;
+using System.Threading.Tasks;
 using TwitterKit.Unity;
-using TwitterKit.Internal;
-using System;
-using Proyecto26;
+using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
+using UserProfile = Firebase.Auth.UserProfile;
 
 [Serializable]
 public class GitAccessTokenRequest
@@ -22,12 +22,17 @@ public class GitAccessTokenRequest
     public string client_id;
     public string device_code;
     public string grant_type;
-   
-}
 
+}
 
 public class FirebaseAuthenticationsHandler : MonoBehaviour
 {
+
+    public const string googleSignIn = "googleSignIn";
+    public const string facebookSignIn = "facebookSignIn";
+    public const string twitterSignIn = "twitterSignIn";
+    Screen_Leaderboard SL;
+
     public static FirebaseAuthenticationsHandler instance;
     public string GoogleWebAPI = "274946996410-8b8vknq91fl03qpt8t5k1u9nqbjm4mbk.apps.googleusercontent.com";  //Can be get from firebase console where we enable google authentication.
 
@@ -39,14 +44,13 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
 
     public bool UserLoggedIn = false;
     public Text debugText;
-    
-    
     public DatabaseReference dbreference;
+
     //User Data variables
     [Header("UserData")]
     public string username;
     public GameObject scoreElement;
-    
+
 
     public string selectedcategory;
 
@@ -54,15 +58,20 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
     public Button GitAccessTokenButton;
     public Button GitUrlButton;
 
-     string userCode;
-     string deviceCode;
+    string userCode;
+    string deviceCode;
 
     public string categoryToBeStored;
     public int scoreToBeStored;
     public string leaderboard_username;
     public string leaderboard_category;
     public int leaderboard_score;
-    
+
+    public GameObject loadingScreen;
+    GameObject myNameandScore;
+
+    public string userId;
+
     private void Awake()
     {
         if (instance == null)
@@ -76,7 +85,7 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
         {
             Destroy(this);
         }
-        
+
     }
     private void AwakeOnce()
     {
@@ -91,23 +100,36 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
             WebClientId = GoogleWebAPI,
             RequestIdToken = true,
             UseGameSignIn = false
-            
+
         };
         Debug.Log("step 0");
         debugText.text = debugText.text + "   " + "step 0";
+
         InitFirebase();
-       
+
+        if (GetAutoLoginKeyValue(googleSignIn) == "true")
+        {
+            OnClickGoogleSignIn();
+        }
+        if (GetAutoLoginKeyValue(twitterSignIn) == "true")
+        {
+            OnClickTwitterSignin();
+        }
+
     }
 
     void InitFirebase()
     {
         auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
         dbreference = FirebaseDatabase.DefaultInstance.RootReference;
+        Debug.Log("dbreference " + dbreference);
         FB.Init(InitCallBack);  //FOR FACEBOOK AUTH
         Twitter.Init();
         Debug.Log("step 0.1");
         debugText.text = debugText.text + "   " + "step 0.1";
-        
+        //Here is AutoLogin Function
+
+
     }
 
     //FOR FACEBOOK AUTH
@@ -125,6 +147,10 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
             Debug.Log("FB not initialized");
             debugText.text = debugText.text + "   " + "FB not initialized";
         }
+        if (GetAutoLoginKeyValue(facebookSignIn) == "true")
+        {
+            OnClickFacebookSignin();
+        }
     }
 
     public void Update()
@@ -133,18 +159,20 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
         {
             username = user.DisplayName;
             UserLoggedIn = false;
-            //SceneManager.LoadScene(2);
+            //SceneManager.LoadScene("MainMenu");
         }
     }
 
     public void OnClickGoogleSignIn()
     {
-       //GoogleSignIn.Configuration = configration;
-       // GoogleSignIn.Configuration.UseGameSignIn = false;
-       // GoogleSignIn.Configuration.RequestIdToken = true;
-       // GoogleSignIn.Configuration.RequestEmail = true;
+        //GoogleSignIn.Configuration = configration;
+        // GoogleSignIn.Configuration.UseGameSignIn = false;
+        // GoogleSignIn.Configuration.RequestIdToken = true;
+        // GoogleSignIn.Configuration.RequestEmail = true;
         Debug.Log("step 1");
         debugText.text = debugText.text + "   " + "step 1";
+        loadingScreen.SetActive(true);
+
         //GoogleSignIn.DefaultInstance.SignIn().ContinueWith(onGoogleAuthenticationFinished, TaskContinuationOptions.ExecuteSynchronously);
 
 
@@ -160,11 +188,12 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
             // oauth_client with type == 3
             WebClientId = "274946996410-8b8vknq91fl03qpt8t5k1u9nqbjm4mbk.apps.googleusercontent.com"
         };
-       // SceneManager.LoadScene("MainMenu");
-        Task<GoogleSignInUser> signIn = GoogleSignIn.DefaultInstance.SignIn();
 
+        Task<GoogleSignInUser> signIn = GoogleSignIn.DefaultInstance.SignIn();
+        Debug.Log("Check if we need prompt here1");
         TaskCompletionSource<FirebaseUser> signInCompleted = new TaskCompletionSource<FirebaseUser>();
-        signIn.ContinueWith(task => {
+        signIn.ContinueWith(task =>
+        {
             if (task.IsCanceled)
             {
                 signInCompleted.SetCanceled();
@@ -175,9 +204,10 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
             }
             else
             {
-
+                Debug.Log("Check if we need to turn on prompt or not2");
                 Credential credential = Firebase.Auth.GoogleAuthProvider.GetCredential(((Task<GoogleSignInUser>)task).Result.IdToken, null);
-                auth.SignInWithCredentialAsync(credential).ContinueWith(authTask => {
+                auth.SignInWithCredentialAsync(credential).ContinueWith(authTask =>
+                {
                     if (authTask.IsCanceled)
                     {
                         signInCompleted.SetCanceled();
@@ -188,8 +218,21 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
                     }
                     else
                     {
+                        Debug.Log("check when the result will be display");
                         signInCompleted.SetResult(((Task<FirebaseUser>)authTask).Result);
-                       // SceneManager.LoadScene("MainMenu");
+
+                        user = ((Task<FirebaseUser>)authTask).Result;
+                        Debug.LogFormat("User signed in successfully: {0} ({1})",
+                        user.DisplayName, user.UserId);
+                        debugText.text = debugText.text + "   " + "User signed in successfully:" + user.DisplayName + user.UserId;
+
+                        user = auth.CurrentUser;      //user's data like name dp can be taken from this variable.
+                        UserLoggedIn = true;
+                        username = user.DisplayName;
+                        //call function for name
+                        userId = user.UserId;
+                        SaveKeyForAutoLogin(googleSignIn);
+                        SceneManager.LoadScene("MainMenu");
                     }
                 });
             }
@@ -200,7 +243,7 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
     {
         Debug.Log("step 2");
         debugText.text = debugText.text + "   " + "step 2";
-        SceneManager.LoadScene("MainMenu");
+        //SceneManager.LoadScene("MainMenu");
         if (task.IsFaulted)
         {
             Debug.Log("Fault in login!");
@@ -214,7 +257,7 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
             Debug.Log("step 3");
             debugText.text = debugText.text + "   " + "step 3";
             GoogleSignin(task.Result.IdToken, null);
-            
+
         }
     }
 
@@ -222,7 +265,8 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
     {
         Firebase.Auth.Credential credential =
         Firebase.Auth.GoogleAuthProvider.GetCredential(googleIdToken, googleAccessToken);
-        auth.SignInWithCredentialAsync(credential).ContinueWith(task => {
+        auth.SignInWithCredentialAsync(credential).ContinueWith(task =>
+        {
             if (task.IsCanceled)
             {
                 Debug.LogError("SignInWithCredentialAsync was canceled.");
@@ -244,8 +288,13 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
             user = auth.CurrentUser;      //user's data like name dp can be taken from this variable.
             UserLoggedIn = true;
             username = user.DisplayName;
-            //SceneManager.LoadScene(2);
+
+           // SceneManager.LoadScene("MainMenu");
         });
+    }
+    void CheckWithGoogleAutoLogin()
+    {
+        PlayerPrefs.GetString("googlelogin", "true");
     }
 
 
@@ -300,12 +349,17 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
             }
 
             user = task.Result;
-            Debug.LogFormat("User signed in successfully: {0} ({1})",
-                user.DisplayName, user.UserId);
+            Debug.LogFormat("User signed in successfully: {0} ({1})",user.DisplayName, user.UserId);
             UserLoggedIn = true;
-          //  SceneManager.LoadScene(2);
+            // SceneManager.LoadScene("MainMenu");
             debugText.text = debugText.text + "   " + "User signed in successfully: " + user.DisplayName + user.UserId;
             username = user.DisplayName;
+
+            //call function for name
+            userId = user.UserId;
+            SaveKeyForAutoLogin(facebookSignIn);
+            SceneManager.LoadScene("MainMenu");
+
 
         });
     }
@@ -335,7 +389,8 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
     {
         Firebase.Auth.Credential credential =
         Firebase.Auth.TwitterAuthProvider.GetCredential(accessToken, secret);
-        auth.SignInWithCredentialAsync(credential).ContinueWith(task => {
+        auth.SignInWithCredentialAsync(credential).ContinueWith(task =>
+        {
             if (task.IsCanceled)
             {
                 Debug.LogError("SignInWithCredentialAsync was canceled.");
@@ -349,9 +404,14 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
 
             user = task.Result;
             Debug.LogFormat("User signed in successfully: {0} ({1})",
-                user.DisplayName, user.UserId);
+            user.DisplayName, user.UserId);
             username = user.DisplayName;
-           // SceneManager.LoadScene(2);
+            //call function for name
+
+            userId = user.UserId;
+            SaveKeyForAutoLogin(twitterSignIn);
+            SceneManager.LoadScene("MainMenu");
+
         });
     }
 
@@ -458,7 +518,8 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
     {
         Firebase.Auth.Credential credential =
             Firebase.Auth.GitHubAuthProvider.GetCredential(accessToken);
-        auth.SignInWithCredentialAsync(credential).ContinueWith(task => {
+        auth.SignInWithCredentialAsync(credential).ContinueWith(task =>
+        {
             if (task.IsCanceled)
             {
                 Debug.LogError("SignInWithCredentialAsync was canceled.");
@@ -471,7 +532,7 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
             }
 
             user = task.Result;
-            //SceneManager.LoadScene(2);
+            SceneManager.LoadScene("MainMenu");
             Debug.LogFormat("User signed in successfully: {0} ({1})",
                 user.DisplayName, user.UserId);
         });
@@ -514,7 +575,7 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
         }
         else
         {
-            //Auth username is now updated
+            Debug.Log("Auth username is now updated");
         }
     }
 
@@ -533,7 +594,7 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
         else
         {
             StartCoroutine(UpdateCategory(categoryToBeStored));
-            //Database username is now updated
+            Debug.Log("Database username is now updated");
         }
     }
 
@@ -552,7 +613,7 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
         else
         {
             StartCoroutine(UpdateScore(scoreToBeStored));
-            //Kills are now updated
+            Debug.Log("Category are now updated");
         }
     }
 
@@ -570,8 +631,19 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
         }
         else
         {
-            //Kills are now updated
+            Debug.Log("Score are now updated");
         }
+    }
+
+
+    public void SaveKeyForAutoLogin(string key)
+    {
+        PlayerPrefs.SetString(key, "true");
+    }
+
+    public string GetAutoLoginKeyValue(string key)
+    {
+        return PlayerPrefs.GetString(key, "false");
     }
 
     //private IEnumerator LoadUserData()
@@ -601,9 +673,11 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
     private IEnumerator LoadScoreboardData()
     {
         //Get all the users data ordered by kills amount
+        Debug.Log("Load Scoreboard Data On ");
         var DBTask = dbreference.Child("users").OrderByChild("score").GetValueAsync();
-
+        Debug.Log("Logs DB Task Completed " + DBTask.IsCompleted);
         yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+        Debug.Log("Logs DB Task Completed " + DBTask.IsCompleted);
 
         if (DBTask.Exception != null)
         {
@@ -612,7 +686,11 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
         else
         {
             //Data has been retrieved
+            Debug.Log("Before Snapshot");
+
             DataSnapshot snapshot = DBTask.Result;
+
+            Debug.Log("Before Snapshot" + snapshot);
 
             //Destroy any existing scoreboard elements
             foreach (Transform child in UIManager.instance.scoreboardContent.transform)
@@ -620,27 +698,43 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
                 Destroy(child.gameObject);
             }
 
+            int i = 1;
             //Loop through every users UID
             foreach (DataSnapshot childSnapshot in snapshot.Children.Reverse<DataSnapshot>())
             {
-               
+                Debug.Log("Loog through every users ID");
+
                 leaderboard_username = childSnapshot.Child("username").Value.ToString();
                 leaderboard_category = childSnapshot.Child("category").Value.ToString();
                 leaderboard_score = int.Parse(childSnapshot.Child("score").Value.ToString());
                 //Instantiate new scoreboard elements
-                if (leaderboard_category == selectedcategory)
+                Debug.Log("Instaantiate new scoreboard elements");
+
                 {
+                    Debug.Log("Here it is inside loop");
                     GameObject scoreboardElement = Instantiate(scoreElement, UIManager.instance.scoreboardContent);
-                    scoreboardElement.GetComponent<ScoreElement>().NewScoreElement(leaderboard_username, leaderboard_score);
+                    scoreboardElement.GetComponent<ScoreElement>().NewScoreElement(i, leaderboard_username, leaderboard_score);
+                    i++;
                 }
-                
+
             }
 
+            {
+
+            }
             //Go to scoareboard screen
             //UserLoggedIn = false;
             UIManager.instance.Scoreboardpanel.SetActive(true);
             //Userdatapanel.SetActive(false);
         }
     }
-    
+
+    public void SignOut()
+    {
+        if (auth != null)
+        {
+            auth.SignOut();
+            SceneManager.LoadScene("FirebaseAuthentication");
+        }
+    }
 }

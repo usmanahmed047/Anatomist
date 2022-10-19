@@ -47,14 +47,19 @@ namespace Anatomist
 
         private void Update()
         {
-            
+
             if (LocalizationManager.CurrentLanguage != null)
             {
                 whoButton.SetActive(LocalizationManager.CurrentLanguage.tag == "en");
 
-                bonusMedicine.text = bonusECG.text = LocalizationManager.localization.bonusSection;
-                bonusMedicine.GetComponent<ArabicText>().Text = bonusMedicine.text;
-               // bonusMedicine.GetComponent<ArabicText>().Refresh();
+                bonusMedicine.GetComponent<ArabicText>().enabled = false;
+                if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+                {
+                    bonusMedicine.GetComponent<ArabicText>().enabled = true;
+                    bonusMedicine.text = bonusECG.text = LocalizationManager.localization.bonusSection;
+                    bonusMedicine.GetComponent<ArabicText>().Text = bonusMedicine.text;
+                    bonusMedicine.GetComponent<ArabicText>().Refresh();
+                }
             }
         }
 

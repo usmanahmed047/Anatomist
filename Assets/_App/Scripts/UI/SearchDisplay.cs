@@ -94,9 +94,13 @@ public class SearchDisplay : MonoBehaviour
         ImageSprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
         displayTxt.text = searchEntry.QuestionData.ClassificationText;
 
-        displayTxt.GetComponent<ArabicText>().Text = displayTxt.text;
-        displayTxt.GetComponent<ArabicText>().Refresh();
-
+        displayTxt.GetComponent<ArabicText>().enabled = false;
+        if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+        {
+            displayTxt.GetComponent<ArabicText>().enabled = true;
+            displayTxt.GetComponent<ArabicText>().Text = displayTxt.text;
+            displayTxt.GetComponent<ArabicText>().Refresh();
+        }
         Display.sprite = ImageSprite;//[Index];
         GameManager.Instance.AttachPinToImage(pin, Display, searchEntry.QuestionData);
         CurrentEntry = searchEntry;

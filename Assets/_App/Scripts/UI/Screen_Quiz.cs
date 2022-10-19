@@ -189,19 +189,32 @@ namespace Anatomist
         {
             CongratsTitle.text = LocalizationManager.localization.Congrats;
 
-            CongratsTitle.GetComponent<ArabicText>().Text = CongratsTitle.text;
-            CongratsTitle.GetComponent<ArabicText>().Refresh();
+            CongratsTitle.GetComponent<ArabicText>().enabled = false;
+            if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+            {
+                CongratsTitle.GetComponent<ArabicText>().enabled = true;
+                CongratsTitle.GetComponent<ArabicText>().Text = CongratsTitle.text;
+                CongratsTitle.GetComponent<ArabicText>().Refresh();
 
+            }
             NextButtonLabel.text = LocalizationManager.localization.Next;
 
-            NextButtonLabel.GetComponent<ArabicText>().Text = NextButtonLabel.text;
-            NextButtonLabel.GetComponent<ArabicText>().Refresh();
-
+            NextButtonLabel.GetComponent<ArabicText>().enabled = false;
+            if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+            {
+                NextButtonLabel.GetComponent<ArabicText>().enabled = true;
+                NextButtonLabel.GetComponent<ArabicText>().Text = NextButtonLabel.text;
+                NextButtonLabel.GetComponent<ArabicText>().Refresh();
+            }
             reviewListHeader.text = LocalizationManager.localization.ReviewList;
 
-            reviewListHeader.GetComponent<ArabicText>().Text = reviewListHeader.text;
-            reviewListHeader.GetComponent<ArabicText>().Refresh();
-
+            reviewListHeader.GetComponent<ArabicText>().enabled = true;
+            if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+            {
+                reviewListHeader.GetComponent<ArabicText>().enabled = true;
+                reviewListHeader.GetComponent<ArabicText>().Text = reviewListHeader.text;
+                reviewListHeader.GetComponent<ArabicText>().Refresh();
+            }
             score.text = string.Format(LocalizationManager.isRightToLeftLanguage ? "{1} :{0}" : "{0}: {1}", LocalizationManager.localization.score, Score);
             GOscore.text = string.Format(LocalizationManager.isRightToLeftLanguage ? "{1} :{0}" : "{0}: {1}", LocalizationManager.localization.score, Score);
             bestScore.text = LocalizationManager.localization.bestScore;
@@ -210,26 +223,62 @@ namespace Anatomist
             btn_ResumeQuiz.text = LocalizationManager.localization.btn_ResumeQuiz;
             btn_QuitQuiz.text = LocalizationManager.localization.btn_QuitQuiz;
 
-            score.GetComponent<ArabicText>().Text = score.text;
-            score.GetComponent<ArabicText>().Refresh();
+            score.GetComponent<ArabicText>().enabled = false;
+            if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+            {
+                score.GetComponent<ArabicText>().enabled = true;
+                score.GetComponent<ArabicText>().Text = score.text;
+                score.GetComponent<ArabicText>().Refresh();
+            }
 
-            GOscore.GetComponent<ArabicText>().Text = GOscore.text;
-            GOscore.GetComponent<ArabicText>().Refresh();
 
-            bestScore.GetComponent<ArabicText>().Text = bestScore.text;
-            bestScore.GetComponent<ArabicText>().Refresh();
+            GOscore.GetComponent<ArabicText>().enabled = false;
+            if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+            {
+                GOscore.GetComponent<ArabicText>().enabled = true;
+                GOscore.GetComponent<ArabicText>().Text = GOscore.text;
+                GOscore.GetComponent<ArabicText>().Refresh();
+            }
 
-            bigDeal.GetComponent<ArabicText>().Text = bigDeal.text;
-            bigDeal.GetComponent<ArabicText>().Refresh();
+            bestScore.GetComponent<ArabicText>().enabled = false;
+            if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+            {
+                bestScore.GetComponent<ArabicText>().enabled = true;
+                bestScore.GetComponent<ArabicText>().Text = bestScore.text;
+                bestScore.GetComponent<ArabicText>().Refresh();
+            }
 
-            pause.GetComponent<ArabicText>().Text = pause.text;
-            pause.GetComponent<ArabicText>().Refresh();
+            bigDeal.GetComponent<ArabicText>().enabled = false;
+            if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+            {
+                bigDeal.GetComponent<ArabicText>().enabled = true;
+                bigDeal.GetComponent<ArabicText>().Text = bigDeal.text;
+                bigDeal.GetComponent<ArabicText>().Refresh();
+            }
 
-            btn_ResumeQuiz.GetComponent<ArabicText>().Text = btn_ResumeQuiz.text;
-            btn_ResumeQuiz.GetComponent<ArabicText>().Refresh();
+            pause.GetComponent<ArabicText>().enabled = false;
+            if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+            {
+                pause.GetComponent<ArabicText>().enabled = true;
+                pause.GetComponent<ArabicText>().Text = pause.text;
+                pause.GetComponent<ArabicText>().Refresh();
+            }
 
-            btn_QuitQuiz.GetComponent<ArabicText>().Text = btn_QuitQuiz.text;
-            btn_QuitQuiz.GetComponent<ArabicText>().Refresh();
+            btn_ResumeQuiz.GetComponent<ArabicText>().enabled = false;
+            if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+            {
+                btn_ResumeQuiz.GetComponent<ArabicText>().enabled = true;
+                btn_ResumeQuiz.GetComponent<ArabicText>().Text = btn_ResumeQuiz.text;
+                btn_ResumeQuiz.GetComponent<ArabicText>().Refresh();
+            }
+
+            btn_QuitQuiz.GetComponent<ArabicText>().enabled = false;
+            if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+            {
+                btn_QuitQuiz.GetComponent<ArabicText>().enabled = true;
+                btn_QuitQuiz.GetComponent<ArabicText>().Text = btn_QuitQuiz.text;
+                btn_QuitQuiz.GetComponent<ArabicText>().Refresh();
+            }
         }
 
         void Update()
@@ -295,8 +344,13 @@ namespace Anatomist
             Score = 0;
             score.text = string.Format(LocalizationManager.isRightToLeftLanguage ? "{1} :{0}" : "{0}: {1}", LocalizationManager.localization.score, Score);
 
-            score.GetComponent<ArabicText>().Text = score.text;
-            score.GetComponent<ArabicText>().Refresh();
+            score.GetComponent<ArabicText>().enabled = false;
+            if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+            {
+                score.GetComponent<ArabicText>().enabled = true;
+                score.GetComponent<ArabicText>().Text = score.text;
+                score.GetComponent<ArabicText>().Refresh();
+            }
             showAnswerButtons = false;
         }
 
@@ -323,8 +377,14 @@ namespace Anatomist
             Timer = 20.5f;
             Tick = true;
             score.text = LocalizationManager.localization.score + ": " + Score;
-            score.GetComponent<ArabicText>().Text = score.text;
-            score.GetComponent<ArabicText>().Refresh();
+
+            score.GetComponent<ArabicText>().enabled = false;
+            if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+            {
+                score.GetComponent<ArabicText>().enabled = true;
+                score.GetComponent<ArabicText>().Text = score.text;
+                score.GetComponent<ArabicText>().Refresh();
+            }
             if (QuestionIndex < AllQuestions.Length - 1)
             {
                 QuestionIndex++;
@@ -375,9 +435,14 @@ namespace Anatomist
             }
 
             bragCategory.text = string.Format(LocalizationManager.isRightToLeftLanguage ? "{1} {0}" : "{0} {1}", categoryLocalized , LocalizationManager.localization.Quiz);
-            bragCategory.GetComponent<ArabicText>().Text = bragCategory.text;
-            bragCategory.GetComponent<ArabicText>().Refresh();
 
+            bragCategory.GetComponent<ArabicText>().enabled = false;
+            if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+            {
+                bragCategory.GetComponent<ArabicText>().enabled = true;
+                bragCategory.GetComponent<ArabicText>().Text = bragCategory.text;
+                bragCategory.GetComponent<ArabicText>().Refresh();
+            }
 
             GameOverFailed.SetActive(false);
             GameOverComplete.SetActive(true);
@@ -485,8 +550,13 @@ namespace Anatomist
                 GameObject GO = Instantiate(failedEntry, Content);
                 GO.GetComponent<Text>().text = WrongAnswers[i].ClassificationText;
 
-                GO.GetComponent<ArabicText>().Text = WrongAnswers[i].ClassificationText;
-                GO.GetComponent<ArabicText>().Refresh();
+                GO.GetComponent<ArabicText>().enabled = false;
+                if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+                {
+                    GO.GetComponent<ArabicText>().enabled = true;
+                    GO.GetComponent<ArabicText>().Text = WrongAnswers[i].ClassificationText;
+                    GO.GetComponent<ArabicText>().Refresh();
+                }
             }
 
             StartCoroutine(DoShowGameOverFailed());
@@ -502,7 +572,7 @@ namespace Anatomist
 
             gr.alpha = 0;
 
-            
+
 
             GOSlider.minValue = 0f;
             GOSlider.maxValue = 1f;
@@ -512,19 +582,19 @@ namespace Anatomist
             bestScore.text = string.Format(LocalizationManager.isRightToLeftLanguage ? "{1} :{0}" : "{0}: {1}", LocalizationManager.localization.bestScore, BestScore.ToString("n0"));
             GOCorrectAnswers.text = string.Format(LocalizationManager.localization.AmountCorrect, CorrectAnswers.Count, AllQuestions.Length);
 
-            GOscore.GetComponent<ArabicText>().Text = GOscore.text;
+            /*GOscore.GetComponent<ArabicText>().Text = GOscore.text;
             GOscore.GetComponent<ArabicText>().Refresh();
 
             bestScore.GetComponent<ArabicText>().Text = bestScore.text;
             bestScore.GetComponent<ArabicText>().Refresh();
 
             GOCorrectAnswers.GetComponent<ArabicText>().Text = GOCorrectAnswers.text;
-            GOCorrectAnswers.GetComponent<ArabicText>().Refresh();
+            GOCorrectAnswers.GetComponent<ArabicText>().Refresh();*/
 
             GameOverFailed.SetActive(true);
 
             yield return new WaitForSeconds(0.25f);
-
+            Debug.Log("Gameoverfailed true");
             float percentCorrect = (float)CorrectAnswers.Count / AllQuestions.Length;
             bestScore.color = Color.white;
             gr.DOFade(1f, 0.25f).OnComplete(() =>
@@ -535,20 +605,32 @@ namespace Anatomist
                     GOSlider.value = percentCorrect * progress;
                     GOscore.text = string.Format(LocalizationManager.isRightToLeftLanguage ? "{1} :{0}" : "{0}: {1}", LocalizationManager.localization.score, (Score * progress).ToString("n0"));
 
-                    GOscore.GetComponent<ArabicText>().Text = GOscore.text;
-                    GOscore.GetComponent<ArabicText>().Refresh();
+                    GOscore.GetComponent<ArabicText>().enabled = false;
+                    if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+                    {
+                        GOscore.GetComponent<ArabicText>().enabled = true;
+                        GOscore.GetComponent<ArabicText>().Text = GOscore.text;
+                        GOscore.GetComponent<ArabicText>().Refresh();
+                    }
+                    Debug.Log("arabic tes=xt 1");
 
                 }).OnComplete(() =>
                 {
                     if (Score > BestScore)
                     {
-                        BestScore = Score;
+                        BestScore = BestScore + Score;
                         bestScore.text = string.Format(LocalizationManager.isRightToLeftLanguage ? "{1} :{0}" : "{0}: {1}", LocalizationManager.localization.bestScore, BestScore);
                         bestScore.DOColor(Color.green, 0.25f).SetLoops(1, LoopType.Yoyo);
                         bestScore.rectTransform.DOPunchScale(Vector3.one * .25f, 0.5f, 0, 0);
 
-                        bestScore.GetComponent<ArabicText>().Text = bestScore.text;
-                        bestScore.GetComponent<ArabicText>().Refresh();
+                        bestScore.GetComponent<ArabicText>().enabled = false;
+                        if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+                        {
+                            bestScore.GetComponent<ArabicText>().enabled = true;
+                            bestScore.GetComponent<ArabicText>().Text = bestScore.text;
+                            bestScore.GetComponent<ArabicText>().Refresh();
+                        }
+                        Debug.Log("arabic tes=xt 2");
                     }
                 });
 
@@ -559,11 +641,12 @@ namespace Anatomist
             //   GSManager.SubmitScore(Score, GameManager.CategoryToLeaderboardID(AllQuestions[0].Category));
 
             FirebaseAuthenticationsHandler.instance.SaveDataButton(AllQuestions[0].Category, Score);
-            UIManager.instance.leaderboardButton.gameObject.SetActive(true);
+            //UIManager.instance.leaderboardButton.gameObject.SetActive(true);
             if (PlayerPrefs.GetString("Showed Rate App", "false") == "false")
             {
                 RateBox.Instance.Show("Enjoying Anatomist?", "Give us a 5 star rating to help us grow!", "Rate Us", "Later");
                 PlayerPrefs.SetString("Showed Rate App", "true");
+                Debug.Log("Enjoying anatomy");
             }
 
             //if (FB.IsLoggedIn)
@@ -636,9 +719,13 @@ namespace Anatomist
             ChangeAllColorButtons(DefaultColor);
             question.text = LocalizationManager.localization.question + " # \n " + (questionIndex + 1) + " of " + AllQuestions.Length;
 
+            question.GetComponent<ArabicText>().enabled = false;
+            if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+            { 
+            question.GetComponent<ArabicText>().enabled = true;
             question.GetComponent<ArabicText>().Text = question.text;
             question.GetComponent<ArabicText>().Refresh();
-
+             }
             if (AllQuestions[questionIndex].Question.type == QuizType.Image)
             {
                 QuestionText.gameObject.SetActive(false);
@@ -666,8 +753,13 @@ namespace Anatomist
                 pin.gameObject.SetActive(false);
                 QuestionText.text = AllQuestions[questionIndex].Question.QuestionText;
 
-                QuestionText.GetComponent<ArabicText>().Text = QuestionText.text;
-                QuestionText.GetComponent<ArabicText>().Refresh();
+                QuestionText.GetComponent<ArabicText>().enabled = false;
+                if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+                {
+                    QuestionText.GetComponent<ArabicText>().enabled = true;
+                    QuestionText.GetComponent<ArabicText>().Text = QuestionText.text;
+                    QuestionText.GetComponent<ArabicText>().Refresh();
+                }
 
                 QuestionText.transform.parent.gameObject.SetActive(true);
                 QuestionText.gameObject.SetActive(true);

@@ -52,5 +52,11 @@ public class MenuButton : MonoBehaviour
     {
         MusicManager.Instance.ToggleSound();
     }
+
+    public void SignOut()
+    {
+        FirebaseAuthenticationsHandler.instance.SignOut();
+    }
+
 }
 
