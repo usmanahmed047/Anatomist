@@ -75,10 +75,45 @@ namespace Anatomist
              feedbackPositive.GetComponent<ArabicText>().Text = feedbackPositive.text;
             feedbackPositive.GetComponent<ArabicText>().Refresh();
 #endif
+            feedbackBody2.GetComponent<ArabicText>().enabled = false;
             feedbackBody2.text = LocalizationManager.localization.feedbackBody2.Replace("$LINKCOLOR", GameManager.GetTag("$LINKCOLOR"));
+            if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+            {
+                feedbackBody2.GetComponent<ArabicText>().enabled = true;
+                feedbackBody2.GetComponent<ArabicText>().Text = feedbackBody2.text;
+                feedbackBody2.GetComponent<ArabicText>().Refresh();
+            }
+
+            feedbackNegative.GetComponent<ArabicText>().enabled = false;
             feedbackNegative.text = LocalizationManager.localization.feedbackNegative.Replace("$LINKCOLOR", GameManager.GetTag("$LINKCOLOR"));
+            if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+            {
+                feedbackNegative.GetComponent<ArabicText>().enabled = true;
+                feedbackNegative.GetComponent<ArabicText>().Text = feedbackNegative.text;
+                feedbackNegative.GetComponent<ArabicText>().Refresh();
+               
+            }
+
+            feedbackBody3.GetComponent<ArabicText>().enabled = false;
             feedbackBody3.text = LocalizationManager.localization.feedbackBody3.Replace("$LINKCOLOR", GameManager.GetTag("$LINKCOLOR"));
+            if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+            {
+                feedbackBody3.GetComponent<ArabicText>().enabled = true;
+                feedbackBody3.GetComponent<ArabicText>().Text = feedbackBody3.text;
+                feedbackBody3.GetComponent<ArabicText>().Refresh();
+                
+            }
+
+            version.GetComponent<ArabicText>().enabled = false;
             version.text = LocalizationManager.localization.version + "\n" + LocalizationManager.localization.copyright;
+            if (PlayerPrefs.GetString("LanguageTag", "en") == "ar")
+            {
+                version.GetComponent<ArabicText>().enabled = true;
+                version.GetComponent<ArabicText>().Text = version.text;
+                version.GetComponent<ArabicText>().Refresh();
+
+            }
+
 
 
 

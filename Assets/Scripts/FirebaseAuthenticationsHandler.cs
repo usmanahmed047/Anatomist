@@ -12,7 +12,6 @@ using System.Threading.Tasks;
 using TwitterKit.Unity;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 using UserProfile = Firebase.Auth.UserProfile;
 
@@ -68,10 +67,8 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
     public int leaderboard_score;
 
     public GameObject loadingScreen;
-    GameObject myNameandScore;
 
     public string userId;
-
     private void Awake()
     {
         if (instance == null)
@@ -289,7 +286,7 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
             UserLoggedIn = true;
             username = user.DisplayName;
 
-           // SceneManager.LoadScene("MainMenu");
+            // SceneManager.LoadScene("MainMenu");
         });
     }
     void CheckWithGoogleAutoLogin()
@@ -349,7 +346,7 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
             }
 
             user = task.Result;
-            Debug.LogFormat("User signed in successfully: {0} ({1})",user.DisplayName, user.UserId);
+            Debug.LogFormat("User signed in successfully: {0} ({1})", user.DisplayName, user.UserId);
             UserLoggedIn = true;
             // SceneManager.LoadScene("MainMenu");
             debugText.text = debugText.text + "   " + "User signed in successfully: " + user.DisplayName + user.UserId;
@@ -702,20 +699,16 @@ public class FirebaseAuthenticationsHandler : MonoBehaviour
             //Loop through every users UID
             foreach (DataSnapshot childSnapshot in snapshot.Children.Reverse<DataSnapshot>())
             {
-                Debug.Log("Loog through every users ID");
-
                 leaderboard_username = childSnapshot.Child("username").Value.ToString();
                 leaderboard_category = childSnapshot.Child("category").Value.ToString();
                 leaderboard_score = int.Parse(childSnapshot.Child("score").Value.ToString());
-                //Instantiate new scoreboard elements
-                Debug.Log("Instaantiate new scoreboard elements");
-
+                if (childSnapshot.Key == userId)
                 {
-                    Debug.Log("Here it is inside loop");
-                    GameObject scoreboardElement = Instantiate(scoreElement, UIManager.instance.scoreboardContent);
-                    scoreboardElement.GetComponent<ScoreElement>().NewScoreElement(i, leaderboard_username, leaderboard_score);
-                    i++;
+                    ScreenManager.Instance.screens[4].GetComponent<Screen_Leaderboard>().SetMYProperties(leaderboard_username, leaderboard_score.ToString());
                 }
+                GameObject scoreboardElement = Instantiate(scoreElement, UIManager.instance.scoreboardContent);
+                scoreboardElement.GetComponent<ScoreElement>().NewScoreElement(i, leaderboard_username, leaderboard_score);
+                i++;
 
             }
 

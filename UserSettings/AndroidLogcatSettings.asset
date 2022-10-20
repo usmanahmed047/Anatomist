@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "51340f71",
         "name": "com.AndrewMeyerson.anatomist",
-        "processId": 20920,
+        "processId": 19065,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,37 +11,37 @@
         {
             "deviceId": "51340f71",
             "name": "com.AndrewMeyerson.anatomist",
-            "processId": 12352,
+            "processId": 20920,
             "exited": true
         },
         {
             "deviceId": "51340f71",
-            "name": "com.AndrewMeyerson.anatomist",
-            "processId": 7615,
-            "exited": true
-        },
-        {
-            "deviceId": "51340f71",
-            "name": "com.AndrewMeyerson.anatomist",
-            "processId": 7617,
-            "exited": true
-        },
-        {
-            "deviceId": "51340f71",
-            "name": "com.facebook.katana",
-            "processId": 16976,
+            "name": "net.oneplus.launcher",
+            "processId": 5157,
             "exited": false
         },
         {
             "deviceId": "51340f71",
-            "name": "com.AndrewMeyerson.anatomist",
-            "processId": 20917,
+            "name": "com.google.android.youtube",
+            "processId": 8967,
             "exited": true
         },
         {
             "deviceId": "51340f71",
             "name": "com.AndrewMeyerson.anatomist",
-            "processId": 20920,
+            "processId": 14912,
+            "exited": true
+        },
+        {
+            "deviceId": "51340f71",
+            "name": "com.AndrewMeyerson.anatomist",
+            "processId": 19063,
+            "exited": true
+        },
+        {
+            "deviceId": "51340f71",
+            "name": "com.AndrewMeyerson.anatomist",
+            "processId": 19065,
             "exited": false
         },
         {

@@ -52,13 +52,10 @@ namespace Anatomist
         {
             base.CloseImmediate();
         }
-        public void saveuserName(GameObject userNamedb)
+        public void SetMYProperties(string userName, string score)
         {
-            
-        }
-        public void saveuserScore()
-        {
-
+            this.userName.text = userName;
+            this.userScore.text = score;
         }
     }
    
